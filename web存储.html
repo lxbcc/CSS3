@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="web存储.css">
+</head>
+<body>
+    <div id="k">
+        <div class="top">
+            <input type="search" id="s1">
+            <input type="submit" value="搜索" id="s2" onclick="add('s1')">
+        </div>
+        <p class="sou">最近搜索</p>
+        <p id="new"></p>
+        <img src="./X}}D~UFOHN7]YHJ~_S]~EMJ.png" height="30" width="30" alt="" id="delete" onclick="clearStorage('new');">
+    </div>
+</body>
+<script>
+     function clearStorage() {
+        localStorage.clear();
+        alert("全部数据被清除。");
+        load('new');
+    }
+    function add(id){
+        var data=document.getElementById(id).value;
+        var time = new Date().getTime();
+        localStorage.setItem(time,data);
+        if(localStorage.length==1){
+            load('new');
+        }
+        else if(localStorage.length>1){
+            for(var j=0;j<localStorage.length-1;j++){
+                var key=localStorage.key(j);
+                var value=localStorage.getItem(key);
+                console.log(key,value);
+
+                if(data!=value){
+                    load('new');
+                }else{
+                    localStorage.removeItem(key);
+                    load('new');
+                }
+            }
+        }
+    }
+    function load(id){
+        var out='<div>';
+        for(var i=0;i<localStorage.length;i++){
+            var key=localStorage.key(i);
+            var value=localStorage.getItem(key);
+            out+='<div style="width:auto;background-color:#e0e0e0;float:left;margin-left:6px;margin-top:5px;">'+value+'</div>';
+        }
+        var target = document.getElementById(id);
+        target.innerHTML=out;
+    }
+</script>
+</html> 

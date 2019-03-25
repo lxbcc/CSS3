@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    window.onload=function(){
+        if(!window.localStorage){
+            alert("不支持");
+        }
+        else{
+            localStorage.setItem("key1",666);
+            localStorage.a="1";
+            localStorage["key2"]="第二个值";
+
+            console.log(localStorage.getItem("key1"));
+            console.log(typeof localStorage[["key1"]]);
+            console.log(localStorage.a);
+            console.log(localStorage.key2);
+            // localStorage.removeItem("a");
+        }
+    }
+</script>
+</html>

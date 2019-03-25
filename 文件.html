@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="file" id="file" multiple>
+    <input type="button" value="文件上传" onclick="showFileName();">
+</body>
+<script>
+    function showFileName(){
+        var file;
+        var file1;
+        file1=document.getElementById("file");
+        for(var i=0;i<file1.files.length;i++){
+            file=file1.files[i];
+            console.log(file.name);
+            console.log(file.size);
+        }
+    }
+</script>
+</html>
