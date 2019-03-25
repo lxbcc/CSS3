@@ -35,8 +35,6 @@
             for(var j=0;j<localStorage.length-1;j++){
                 var key=localStorage.key(j);
                 var value=localStorage.getItem(key);
-                console.log(key,value);
-
                 if(data!=value){
                     load('new');
                 }else{
