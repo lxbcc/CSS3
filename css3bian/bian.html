@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>青岛栈桥</title>
+    <style>
+        #div1{
+            width: 360px;
+            height: 430px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            background-color: #fff;
+            border-top: 2px solid  rgb(231, 229, 229);
+            border-left: 3px solid  rgb(231, 229, 229);
+            border-right: 4px solid  rgb(231, 229, 229);
+            border-bottom: 4px solid  rgb(231, 229, 229);
+        }
+        #img1{
+            width: 360px;
+            height: 260px;
+        }
+        #p1{
+            background-color:rgb(235, 136, 23); 
+            font-weight: bolder;
+            font-size: 13px;
+            border-radius: 45px;
+            color: aliceblue;
+            width: 45px;
+            height: 45px;
+            text-align: center;
+            line-height: 22px;
+            z-index: 2;
+            position: absolute;
+            top: 10px;
+            left:290px;
+        }
+        #div2{
+            width: 55px;
+            height:25px;
+            background: orangered;
+            position:absolute;
+            top: 235px;
+            color: white;
+            text-align: center;
+            font-size: 12px;
+            line-height: 25px;
+            z-index: 2;
+        }
+        #div3{
+            width: 360px;
+            height: 200px;
+            background-color: white;
+            position:absolute;
+            top:260px;
+        }
+        #h{
+            margin-top: 0px;
+            padding-top: 10px;
+            margin-left:15px; 
+            margin-bottom:5px; 
+        }
+        #p2{
+            color: orange;
+            font-size: 20px;
+            margin-left: 15px;
+            margin-top:2px;
+            margin-bottom: 2px;
+        }
+        #p3{
+            color: gray;
+            font-size: 17px;
+            margin-left: 15px;
+            margin-top: 0px;
+            display: none;
+        }
+        #p4{
+            color: gray;
+            font-size: 10px;
+            position: absolute;
+            bottom:10px;
+            left:15px;
+            display: block;
+            z-index: 3;
+            background-color: #fff;
+        }
+        #cover{
+            position: absolute;
+            top:0px;
+            width: 360px;
+            height: 260px;
+            background-color: rgba(46, 41, 41, 0.5);
+            display: none; 
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <img id="img1" src="zhanqiao.jpg" alt="">
+        <p id="p1"> &nbsp 15 &nbsp  五月</p>
+        <div id="div2">照片</div>
+        <div id="cover"></div>
+        <div id="div3">
+            <h2 id="h">青岛栈桥</h2>
+                <p id="p2">国家AAAA级旅游景区</p>
+                <p id="p3">青岛栈桥是青岛海滨风景区的景点之一，是国务院于1982年首批公布的国家级风景名胜区。
+                    青岛栈桥位于游人如织的青岛中山路南端，桥身从海岸探入如弯月般的青岛湾深处。桥身供游人参观
+                    并在此停靠旅游船，由此乘船可看海上青岛。</p>
+        </div>
+        <div id="p4">10分钟前&nbsp&nbsp&nbsp&nbsp123评论</div>
+    </div>
+</body>
+<script>
+    var div1=document.getElementById("div1");
+    var img1=document.getElementById("img1");
+    var div2=document.getElementById("div2");
+    var div3=document.getElementById("div3");
+    var p3=document.getElementById("p3");
+    var cover=document.getElementById("cover");
+    div1.onmouseover=function(){
+        img1.style.transition="all 1s";
+        img1.style.transform="scale(1.5,1.5)";
+        div2.style.transition="all 1s";
+        div2.style.transform="translateY(-100px)";
+        div3.style.transition="all 1s";
+        div3.style.transform="translateY(-100px)";
+        p3.style.transition="all 1s";
+        p3.style.display="block";
+        cover.style.transition="all 1s";
+        cover.style.display="block";
+    }
+    div1.onmouseout=function(){
+        img1.style.transform="scale(1,1)";
+        div2.style.transform="translateY(0px)";
+        div3.style.transform="translateY(0px)";
+        p3.style.display="none";
+        cover.style.display="none";
+    }
+</script>
+</html>
